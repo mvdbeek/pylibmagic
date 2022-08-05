@@ -4,6 +4,7 @@ project(pylibmagic VERSION 0.2.0 DESCRIPTION "Library for compiling libmagic usi
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_MACOSX_RPATH 1)
+set(CMAKE_OSX_ARCHITECTURES "x86_64;arm64" CACHE STRING "")
 
 set(libmagic_PREFIX libmagic)
 
