@@ -36,6 +36,11 @@ jobs:
       with:
         fetch-depth: 0
 
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
+      with:
+        limit-access-to-actor: true
+
     - run: 'brew install $(brew fetch -q --force --bottle-tag=arm64_big_sur libmagic | head -n 1 | sed "s|Downloaded to: ||")'
 
     - uses: pypa/cibuildwheel@2.6.0
