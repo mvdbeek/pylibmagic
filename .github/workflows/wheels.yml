@@ -36,11 +36,6 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - name: Setup tmate session
-    #   uses: mxschmitt/action-tmate@v3
-    #   with:
-    #     limit-access-to-actor: true
-
     - uses: pypa/cibuildwheel@2.6.0
       env:
         CIBW_ARCHS_MACOS: x86_64 universal2
