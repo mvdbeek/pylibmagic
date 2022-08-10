@@ -38,7 +38,8 @@ jobs:
 
     - uses: pypa/cibuildwheel@2.6.0
       env:
-        CIBW_ARCHS_MACOS: x86_64 universal2
+        # Use platform specific environment variable to build x86_64 and arm64
+        CIBW_ARCHS_MACOS: x86_64 arm64
 
     - name: Upload wheels
       uses: actions/upload-artifact@v2

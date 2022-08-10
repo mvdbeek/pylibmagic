@@ -4,8 +4,9 @@ project(pylibmagic VERSION 0.2.0 DESCRIPTION "Library for compiling libmagic usi
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_MACOSX_RPATH 1)
-set(CMAKE_OSX_ARCHITECTURES "arm64" CACHE STRING "")
-set(CMAKE_C_FLAGS "-arch x86_64 -arch arm64")
+if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+    set(CMAKE_C_FLAGS "-arch x86_64 -arch arm64")
+endif()
 
 set(libmagic_PREFIX libmagic)
 
